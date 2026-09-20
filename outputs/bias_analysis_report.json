@@ -1,0 +1,214 @@
+{
+  "analysis_timestamp": "2026-09-20T15:51:24.396504",
+  "diagnostic_correlations": {
+    "ngo_age_vs_score": 0.3878,
+    "log_income_vs_score": 0.8123,
+    "log_beneficiaries_vs_score": 0.1088,
+    "operational_states_vs_score": -0.1703,
+    "interpretation_guideline": "Correlations are diagnostic guidance; low-to-moderate correlations indicate no disproportionate single-factor dominance."
+  },
+  "group_metrics": {
+    "by_registration_type": {
+      "Section 8": {
+        "count": 59,
+        "mean_score": 83.34,
+        "median_score": 87.9,
+        "std_score": 17.86,
+        "mean_confidence": 0.85
+      },
+      "Society": {
+        "count": 68,
+        "mean_score": 86.82,
+        "median_score": 91.55,
+        "std_score": 14.46,
+        "mean_confidence": 0.88
+      },
+      "Trust": {
+        "count": 73,
+        "mean_score": 84.6,
+        "median_score": 88.7,
+        "std_score": 15.93,
+        "mean_confidence": 0.86
+      }
+    },
+    "by_income_scale": {
+      "Large": {
+        "count": 24,
+        "mean_score": 89.36,
+        "median_score": 92.0,
+        "std_score": 10.47,
+        "mean_confidence": 0.91
+      },
+      "Medium": {
+        "count": 86,
+        "mean_score": 89.44,
+        "median_score": 90.7,
+        "std_score": 6.65,
+        "mean_confidence": 0.9
+      },
+      "Small": {
+        "count": 77,
+        "mean_score": 87.45,
+        "median_score": 89.8,
+        "std_score": 9.33,
+        "mean_confidence": 0.89
+      },
+      "Unknown": {
+        "count": 13,
+        "mean_score": 32.81,
+        "median_score": 33.0,
+        "std_score": 4.69,
+        "mean_confidence": 0.37
+      }
+    },
+    "by_primary_sector": {
+      "Child Welfare": {
+        "count": 13,
+        "mean_score": 85.22,
+        "median_score": 87.9,
+        "std_score": 17.47,
+        "mean_confidence": 0.88
+      },
+      "Disaster Relief & Rehabilitation": {
+        "count": 11,
+        "mean_score": 84.72,
+        "median_score": 91.6,
+        "std_score": 18.03,
+        "mean_confidence": 0.84
+      },
+      "Education": {
+        "count": 14,
+        "mean_score": 89.11,
+        "median_score": 92.55,
+        "std_score": 12.62,
+        "mean_confidence": 0.9
+      },
+      "Environment & Forests": {
+        "count": 30,
+        "mean_score": 81.7,
+        "median_score": 88.15,
+        "std_score": 19.97,
+        "mean_confidence": 0.83
+      },
+      "Healthcare & Medical": {
+        "count": 21,
+        "mean_score": 87.97,
+        "median_score": 90.9,
+        "std_score": 7.34,
+        "mean_confidence": 0.88
+      },
+      "Nutrition & Food Security": {
+        "count": 36,
+        "mean_score": 89.54,
+        "median_score": 89.95,
+        "std_score": 6.18,
+        "mean_confidence": 0.9
+      },
+      "Rural Development": {
+        "count": 8,
+        "mean_score": 79.16,
+        "median_score": 89.25,
+        "std_score": 22.38,
+        "mean_confidence": 0.8
+      },
+      "Skill Development & Livelihood": {
+        "count": 22,
+        "mean_score": 76.38,
+        "median_score": 87.15,
+        "std_score": 21.41,
+        "mean_confidence": 0.79
+      },
+      "Water & Sanitation": {
+        "count": 24,
+        "mean_score": 83.47,
+        "median_score": 90.75,
+        "std_score": 20.48,
+        "mean_confidence": 0.86
+      },
+      "Women Empowerment": {
+        "count": 21,
+        "mean_score": 89.08,
+        "median_score": 92.5,
+        "std_score": 9.08,
+        "mean_confidence": 0.91
+      }
+    },
+    "by_state": {
+      "Delhi": {
+        "count": 20,
+        "mean_score": 85.05,
+        "median_score": 91.2,
+        "std_score": 15.22,
+        "mean_confidence": 0.86
+      },
+      "Gujarat": {
+        "count": 21,
+        "mean_score": 84.74,
+        "median_score": 88.0,
+        "std_score": 15.75,
+        "mean_confidence": 0.87
+      },
+      "Karnataka": {
+        "count": 24,
+        "mean_score": 87.49,
+        "median_score": 93.1,
+        "std_score": 15.83,
+        "mean_confidence": 0.88
+      },
+      "Kerala": {
+        "count": 22,
+        "mean_score": 87.81,
+        "median_score": 91.7,
+        "std_score": 14.0,
+        "mean_confidence": 0.89
+      },
+      "Maharashtra": {
+        "count": 18,
+        "mean_score": 82.0,
+        "median_score": 87.1,
+        "std_score": 15.78,
+        "mean_confidence": 0.83
+      },
+      "Odisha": {
+        "count": 17,
+        "mean_score": 88.57,
+        "median_score": 89.4,
+        "std_score": 4.99,
+        "mean_confidence": 0.89
+      },
+      "Rajasthan": {
+        "count": 22,
+        "mean_score": 83.69,
+        "median_score": 90.35,
+        "std_score": 18.54,
+        "mean_confidence": 0.88
+      },
+      "Tamil Nadu": {
+        "count": 25,
+        "mean_score": 87.07,
+        "median_score": 90.9,
+        "std_score": 13.14,
+        "mean_confidence": 0.88
+      },
+      "Uttar Pradesh": {
+        "count": 13,
+        "mean_score": 79.38,
+        "median_score": 88.3,
+        "std_score": 23.71,
+        "mean_confidence": 0.81
+      },
+      "West Bengal": {
+        "count": 18,
+        "mean_score": 80.71,
+        "median_score": 88.2,
+        "std_score": 21.17,
+        "mean_confidence": 0.82
+      }
+    }
+  },
+  "fairness_observations": [
+    "Registration Type Disparity: Section 8 (mean 83.34) vs Society (mean 86.82) reflects slight differences in statutory filing requirements, not moral bias.",
+    "Income Scale Disparity: Small NGOs (mean 87.45) vs Large NGOs (mean 89.36) driven primarily by historical audit report count, not income size.",
+    "Age Correlation (0.388): Modest correlation aligns with intended mild age calibration without dominating assessment."
+  ]
+}

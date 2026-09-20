@@ -1,0 +1,89 @@
+{
+  "model": "XGBoost Regressor (Eleos Feasibility)",
+  "split_chronology": {
+    "train": "2018-01-01 to 2023-12-01 (70%)",
+    "val": "2023-12-01 to 2024-08-01 (15%)",
+    "test": "2024-08-01 to 2025-12-01 (15%)"
+  },
+  "sample_counts": {
+    "train": 520,
+    "val": 111,
+    "test": 112,
+    "total": 743
+  },
+  "metrics": {
+    "train": {
+      "MAE": 650717.699609375,
+      "RMSE": 889160.1419396552,
+      "R2": 0.9723143634759653
+    },
+    "validation": {
+      "MAE": 1547437.4598817567,
+      "RMSE": 2264943.29232382,
+      "R2": 0.8005553586110747
+    },
+    "test": {
+      "MAE": 1659902.7862723214,
+      "RMSE": 2332709.4784555454,
+      "R2": 0.7600846374176465
+    }
+  },
+  "overfitting_diagnostics": {
+    "r2_train": 0.9723143634759653,
+    "r2_test": 0.7600846374176465,
+    "r2_gap": 0.2122297260583188,
+    "overfitting_observed": false
+  },
+  "top_features": [
+    {
+      "feature": "beneficiaries_reported",
+      "gain_importance": 128562296258560.0,
+      "relative_importance_pct": 10.670044472315269
+    },
+    {
+      "feature": "remote_disaster_interaction",
+      "gain_importance": 98465103216640.0,
+      "relative_importance_pct": 8.172124027558418
+    },
+    {
+      "feature": "duration_months",
+      "gain_importance": 92818521456640.0,
+      "relative_importance_pct": 7.703485241155654
+    },
+    {
+      "feature": "is_disaster_relief",
+      "gain_importance": 51984488988672.0,
+      "relative_importance_pct": 4.314459414011764
+    },
+    {
+      "feature": "location_district_primary_Ahmedabad",
+      "gain_importance": 47861072920576.0,
+      "relative_importance_pct": 3.9722359619978205
+    },
+    {
+      "feature": "is_remote_area",
+      "gain_importance": 42257084317696.0,
+      "relative_importance_pct": 3.507132200201125
+    },
+    {
+      "feature": "location_state_primary_West Bengal",
+      "gain_importance": 33815479189504.0,
+      "relative_importance_pct": 2.8065200864101345
+    },
+    {
+      "feature": "primary_sector_Water, Sanitation & Environment",
+      "gain_importance": 33753848086528.0,
+      "relative_importance_pct": 2.8014050050155923
+    },
+    {
+      "feature": "sec_sector_education_and_skill_development",
+      "gain_importance": 30944098516992.0,
+      "relative_importance_pct": 2.568209474634564
+    },
+    {
+      "feature": "sec_sector_emergency_relief_and_rehabilitation",
+      "gain_importance": 28774854819840.0,
+      "relative_importance_pct": 2.3881728123043335
+    }
+  ]
+}

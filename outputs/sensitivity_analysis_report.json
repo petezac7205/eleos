@@ -1,0 +1,40 @@
+{
+  "analysis_timestamp": "2026-09-20T15:51:26.156053",
+  "baseline_weights": {
+    "identity_legal": 0.25,
+    "financial_transparency": 0.3,
+    "operational_evidence": 0.25,
+    "data_completeness": 0.2
+  },
+  "perturbations_tested": {
+    "financial_heavy": {
+      "weights": {
+        "identity_legal": 0.2,
+        "financial_transparency": 0.4,
+        "operational_evidence": 0.2,
+        "data_completeness": 0.2
+      },
+      "spearman_rank_correlation": 0.9883
+    },
+    "operational_heavy": {
+      "weights": {
+        "identity_legal": 0.2,
+        "financial_transparency": 0.25,
+        "operational_evidence": 0.35,
+        "data_completeness": 0.2
+      },
+      "spearman_rank_correlation": 0.9894
+    },
+    "equal_weights": {
+      "weights": {
+        "identity_legal": 0.25,
+        "financial_transparency": 0.25,
+        "operational_evidence": 0.25,
+        "data_completeness": 0.25
+      },
+      "spearman_rank_correlation": 0.9957
+    }
+  },
+  "stability_verdict": "HIGHLY_STABLE",
+  "methodological_implication": "Rankings are robust against modest weight shifts; relative evidence positioning remains consistent."
+}

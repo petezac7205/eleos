@@ -1,0 +1,47 @@
+{
+  "audit_timestamp": "2026-09-20T15:51:24.317707",
+  "methodology": "ELEOS Member 1 Diagnostic Validation Protocol",
+  "disclaimer": "Diagnostic guidance only; real-world deployment requires statutory filings.",
+  "accounting_reconciliation_audit": {
+    "total_financial_reports": 573,
+    "expense_breakdown_reconciliation_rate": 99.83,
+    "surplus_deficit_reconciliation_rate": 100.0,
+    "non_negative_violations_count": 0,
+    "accounting_consistency_status": "EXCELLENT"
+  },
+  "schema_completeness_audit": {
+    "ngo_master": {
+      "rows": 200,
+      "columns": 22,
+      "cell_completeness_pct": 95.45,
+      "null_cells_count": 200
+    },
+    "financial_reports": {
+      "rows": 573,
+      "columns": 28,
+      "cell_completeness_pct": 100.0,
+      "null_cells_count": 0
+    },
+    "ngo_public_profile": {
+      "rows": 200,
+      "columns": 17,
+      "cell_completeness_pct": 94.0,
+      "null_cells_count": 204
+    },
+    "ngo_projects": {
+      "rows": 743,
+      "columns": 22,
+      "cell_completeness_pct": 98.34,
+      "null_cells_count": 271
+    }
+  },
+  "score_distribution_diagnostics": {
+    "count": 200,
+    "mean": 84.98,
+    "median": 89.5,
+    "std": 16.0,
+    "min": 24.7,
+    "max": 97.8,
+    "distribution_plausibility": "Plausible non-profit domain distribution with healthy variance."
+  }
+}

@@ -1,0 +1,125 @@
+{
+  "ngo_id": "LIVE_AAATH1234F",
+  "ngo_name": "HopeRelief Foundation",
+  "assessment_date": "2026-09-16",
+  "assessment_type": "evidence_based_trustability_assessment",
+  "trustability_score": 78.2,
+  "score_interpretation": {
+    "label": "Moderate Evidence Coverage",
+    "description": "Evidence demonstrates reasonable baseline documentation with minor reporting gaps or limited historical data."
+  },
+  "data_confidence": 0.58,
+  "confidence_band": "Moderate",
+  "dimension_scores": {
+    "identity_legal": 80.0,
+    "financial_transparency": 69.8,
+    "operational_evidence": 92.0,
+    "data_completeness": 71.4
+  },
+  "financial_analysis": {
+    "programme_expense_ratio": 0.819,
+    "administrative_expense_ratio": 0.0901,
+    "fundraising_expense_ratio": 0.0198,
+    "surplus_margin": 0.0,
+    "financial_anomaly_score": 0.0777,
+    "financial_anomaly_label": "Normal",
+    "peer_group_definition": {
+      "sector": "Disaster Relief & Education",
+      "income_scale": "None",
+      "reference_peer_group": "None",
+      "peer_group_size": 0,
+      "peer_fallback_level": "None"
+    }
+  },
+  "evidence_summary": {
+    "registration_found": true,
+    "registration_verified": false,
+    "pan_verified": true,
+    "tax_exemption_status": "Not Found",
+    "fcra_status": "Valid",
+    "financial_reports_available": 1,
+    "recent_financial_report_available": false,
+    "projects_documented": 3,
+    "documents_available": 2
+  },
+  "positive_evidence": [
+    "Valid legal registration record identified under Trust.",
+    "Permanent Account Number (PAN) was verified against statutory records.",
+    "Active Foreign Contribution Regulation Act (FCRA) registration verified.",
+    "Available disclosure contains 1 financial report(s).",
+    "Core financial disclosures (income, expenditure, assets, liabilities) are complete.",
+    "Statutory auditor issued an unqualified (clean) audit opinion.",
+    "Multiple (3) charitable programmes publicly documented.",
+    "Successfully documented completion for 3 projects.",
+    "Project timelines, start dates, and durations are consistently documented.",
+    "Published impact summaries and verified milestone deliverables are available."
+  ],
+  "negative_evidence": [],
+  "statistical_findings": [
+    "Minor rounding variance (2.1%) observed in expenditure reconciliation.",
+    "No statistical outlier pattern detected relative to peer non-profit population.",
+    "Programme expense ratio is 81.9% (Peer group median: 78.0%).",
+    "Administrative expense ratio is 9.0% (Peer group median: 10.0%)."
+  ],
+  "missing_evidence": [
+    "Section 12A/12AB tax exemption certificate was not found.",
+    "Section 80G tax benefit certificate is not documented.",
+    "Latest financial statement is from FY2024-25; recency decay applied.",
+    "Section 12A/80G Exemption",
+    "Operational Geography Disclosure"
+  ],
+  "uncertainty": {
+    "assessment_confidence": 0.58,
+    "major_uncertainty_sources": [
+      "Missing 5 expected evidence disclosures.",
+      "Public evidence is self-reported or platform-extracted; requires statutory registry confirmation."
+    ]
+  },
+  "limitations": [
+    "The assessment is based strictly on observable public evidence and does not establish moral character, honesty, or fraud.",
+    "Missing public documentation does not prove absence of charitable activity or operational wrongdoing.",
+    "Statistical anomaly detection flags unusual distributions, not misuse of funds."
+  ],
+  "methodology": {
+    "methodology_version": "member1-v1.0",
+    "model_version": "iforest-v1.0",
+    "dataset_version": "reference-v1.0",
+    "scoring_weights": {
+      "identity_legal": 0.25,
+      "financial_transparency": 0.3,
+      "operational_evidence": 0.25,
+      "data_completeness": 0.2
+    }
+  },
+  "raw_document_hashes": {
+    "NGO_Clean.pdf": "0xae6b6766dfa380435d51ed79de593d73b8457567eef93851fd1af36a0e8653ce"
+  },
+  "extraction_provider": "aws_textract_bedrock",
+  "verification_summary": {
+    "status": "PASSED",
+    "checks": {
+      "pan_format_valid": true,
+      "accounting_reconciliation": {
+        "pass": true,
+        "variance_inr": 490000.0
+      },
+      "icai_udin_verified": true,
+      "project_grant_cross_reconciliation": true,
+      "tax_exemptions": {
+        "section_12a_active": false,
+        "section_80g_active": false
+      },
+      "external_registries": {
+        "darpan_verified": true,
+        "darpan_info": {
+          "darpan_id": "TN/2019/0234567",
+          "matched_ngo_name": "HopeRelief Foundation",
+          "status": "Verified",
+          "mode": "Statutory_Registry_Reference_Cache",
+          "disclaimer": "Verified against local statutory registry reference cache for validation."
+        },
+        "cbdt_order_verified": true
+      }
+    }
+  }
+}

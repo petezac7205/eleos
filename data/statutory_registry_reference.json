@@ -1,0 +1,82 @@
+{
+  "darpan_registry": {
+    "TN/2019/0234567": {
+      "ngo_name": "HopeRelief Foundation",
+      "pan": "AAATH1234F",
+      "state": "Tamil Nadu",
+      "status": "Verified",
+      "registration_number": "TR/2019/CHN/1029"
+    },
+    "MH/2020/0345678": {
+      "ngo_name": "Teach For Change India",
+      "pan": "AAACT9012M",
+      "state": "Maharashtra",
+      "status": "Verified",
+      "registration_number": "U85300MH2020NPL12984"
+    },
+    "KA/2021/0456789": {
+      "ngo_name": "Pragati Rural Development Trust",
+      "pan": "AAATP9876K",
+      "state": "Karnataka",
+      "status": "Verified",
+      "registration_number": "TR/2021/BLR/4421"
+    }
+  },
+  "cbdt_10ac_registry": {
+    "AAATH1234FE20214": {
+      "pan": "AAATH1234F",
+      "section": "12A",
+      "order_date": "2021-05-15",
+      "valid_until": "2026-05-14",
+      "status": "Active"
+    },
+    "AAATH1234FD20218": {
+      "pan": "AAATH1234F",
+      "section": "80G",
+      "order_date": "2021-05-15",
+      "valid_until": "2026-05-14",
+      "status": "Active"
+    },
+    "AAACT9012ME20221": {
+      "pan": "AAACT9012M",
+      "section": "12A",
+      "order_date": "2022-03-10",
+      "valid_until": "2027-03-09",
+      "status": "Active"
+    },
+    "AAACT9012MD20225": {
+      "pan": "AAACT9012M",
+      "section": "80G",
+      "order_date": "2022-03-10",
+      "valid_until": "2024-03-09",
+      "status": "Expired"
+    },
+    "AAATP9876KE20219": {
+      "pan": "AAATP9876K",
+      "section": "12A",
+      "order_date": "2021-11-20",
+      "valid_until": "2026-11-19",
+      "status": "Active"
+    },
+    "AAATP9876KD20213": {
+      "pan": "AAATP9876K",
+      "section": "80G",
+      "order_date": "2021-11-20",
+      "valid_until": "2026-11-19",
+      "status": "Active"
+    }
+  },
+  "fcra_registry": {
+    "076210234": {
+      "ngo_name": "HopeRelief Foundation",
+      "status": "Valid",
+      "valid_until": "2027-10-31"
+    },
+    "083420199": {
+      "ngo_name": "Teach For Change India",
+      "status": "Valid",
+      "valid_until": "2028-04-30"
+    }
+  }
+}
+

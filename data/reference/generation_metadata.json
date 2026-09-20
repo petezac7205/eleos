@@ -1,0 +1,17 @@
+{
+  "dataset_name": "ELEOS Member 1 Reference NGO Evidence Dataset",
+  "version": "reference-v1.0",
+  "generation_timestamp": "2026-09-20T15:51:21.996371",
+  "random_seed": 42,
+  "total_ngos": 200,
+  "counts": {
+    "ngo_registry_raw_records": 528,
+    "ngo_master_records": 200,
+    "ngo_public_profile_records": 200,
+    "financial_reports_records": 573,
+    "ngo_projects_records": 743,
+    "evidence_documents_records": 773
+  },
+  "intended_use": "Validation, sensitivity analysis, pipeline evaluation, and unit testing only.",
+  "real_world_validity_disclaimer": "This reference dataset does not represent real-world non-profit honesty or misconduct. Real-world validation requires genuine statutory filings from Darpan, MCA, and CBDT."
+}

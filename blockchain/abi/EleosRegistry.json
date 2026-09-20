@@ -1,0 +1,962 @@
+{
+  "contractName": "EleosRegistryV2",
+  "abi": [
+    {
+      "inputs": [
+        {
+          "internalType": "address",
+          "name": "initialAdmin",
+          "type": "address"
+        }
+      ],
+      "stateMutability": "nonpayable",
+      "type": "constructor"
+    },
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": true,
+          "internalType": "bytes32",
+          "name": "campaignId",
+          "type": "bytes32"
+        },
+        {
+          "indexed": false,
+          "internalType": "bytes32",
+          "name": "budgetItemsHash",
+          "type": "bytes32"
+        },
+        {
+          "indexed": false,
+          "internalType": "uint256",
+          "name": "targetAmountPaise",
+          "type": "uint256"
+        },
+        {
+          "indexed": false,
+          "internalType": "uint256",
+          "name": "timestamp",
+          "type": "uint256"
+        }
+      ],
+      "name": "CampaignBudgetLocked",
+      "type": "event"
+    },
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": true,
+          "internalType": "bytes32",
+          "name": "campaignId",
+          "type": "bytes32"
+        },
+        {
+          "indexed": true,
+          "internalType": "bytes32",
+          "name": "ngoId",
+          "type": "bytes32"
+        },
+        {
+          "indexed": false,
+          "internalType": "uint256",
+          "name": "targetAmountPaise",
+          "type": "uint256"
+        },
+        {
+          "indexed": false,
+          "internalType": "string",
+          "name": "currency",
+          "type": "string"
+        },
+        {
+          "indexed": false,
+          "internalType": "uint256",
+          "name": "timestamp",
+          "type": "uint256"
+        }
+      ],
+      "name": "CampaignCreated",
+      "type": "event"
+    },
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": true,
+          "internalType": "bytes32",
+          "name": "campaignId",
+          "type": "bytes32"
+        },
+        {
+          "indexed": false,
+          "internalType": "string",
+          "name": "reasonCode",
+          "type": "string"
+        },
+        {
+          "indexed": false,
+          "internalType": "bytes32",
+          "name": "evidenceHash",
+          "type": "bytes32"
+        },
+        {
+          "indexed": true,
+          "internalType": "address",
+          "name": "reporter",
+          "type": "address"
+        },
+        {
+          "indexed": false,
+          "internalType": "uint256",
+          "name": "timestamp",
+          "type": "uint256"
+        }
+      ],
+      "name": "CampaignFlagged",
+      "type": "event"
+    },
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": true,
+          "internalType": "bytes32",
+          "name": "merkleRoot",
+          "type": "bytes32"
+        },
+        {
+          "indexed": true,
+          "internalType": "uint256",
+          "name": "dateTimestamp",
+          "type": "uint256"
+        },
+        {
+          "indexed": false,
+          "internalType": "uint32",
+          "name": "recordCount",
+          "type": "uint32"
+        },
+        {
+          "indexed": false,
+          "internalType": "uint256",
+          "name": "timestamp",
+          "type": "uint256"
+        }
+      ],
+      "name": "DailyStateAnchored",
+      "type": "event"
+    },
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": true,
+          "internalType": "bytes32",
+          "name": "ngoId",
+          "type": "bytes32"
+        },
+        {
+          "indexed": false,
+          "internalType": "string",
+          "name": "docType",
+          "type": "string"
+        },
+        {
+          "indexed": false,
+          "internalType": "bytes32",
+          "name": "fileHash",
+          "type": "bytes32"
+        },
+        {
+          "indexed": false,
+          "internalType": "uint256",
+          "name": "timestamp",
+          "type": "uint256"
+        }
+      ],
+      "name": "DocumentAnchored",
+      "type": "event"
+    },
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": true,
+          "internalType": "bytes32",
+          "name": "donationId",
+          "type": "bytes32"
+        },
+        {
+          "indexed": true,
+          "internalType": "bytes32",
+          "name": "campaignId",
+          "type": "bytes32"
+        },
+        {
+          "indexed": false,
+          "internalType": "bytes32",
+          "name": "gatewayReceiptHash",
+          "type": "bytes32"
+        },
+        {
+          "indexed": false,
+          "internalType": "uint256",
+          "name": "amountPaise",
+          "type": "uint256"
+        },
+        {
+          "indexed": false,
+          "internalType": "string",
+          "name": "currency",
+          "type": "string"
+        },
+        {
+          "indexed": false,
+          "internalType": "uint256",
+          "name": "timestamp",
+          "type": "uint256"
+        }
+      ],
+      "name": "DonationRecorded",
+      "type": "event"
+    },
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": true,
+          "internalType": "bytes32",
+          "name": "donationId",
+          "type": "bytes32"
+        },
+        {
+          "indexed": true,
+          "internalType": "bytes32",
+          "name": "campaignId",
+          "type": "bytes32"
+        },
+        {
+          "indexed": false,
+          "internalType": "uint256",
+          "name": "amountPaise",
+          "type": "uint256"
+        },
+        {
+          "indexed": false,
+          "internalType": "string",
+          "name": "reason",
+          "type": "string"
+        },
+        {
+          "indexed": false,
+          "internalType": "uint256",
+          "name": "timestamp",
+          "type": "uint256"
+        }
+      ],
+      "name": "DonationRefunded",
+      "type": "event"
+    },
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": true,
+          "internalType": "bytes32",
+          "name": "campaignId",
+          "type": "bytes32"
+        },
+        {
+          "indexed": false,
+          "internalType": "uint8",
+          "name": "milestoneIndex",
+          "type": "uint8"
+        },
+        {
+          "indexed": false,
+          "internalType": "uint256",
+          "name": "amountPaise",
+          "type": "uint256"
+        },
+        {
+          "indexed": false,
+          "internalType": "bytes32",
+          "name": "vendorGstHash",
+          "type": "bytes32"
+        },
+        {
+          "indexed": false,
+          "internalType": "bytes32",
+          "name": "invoiceHash",
+          "type": "bytes32"
+        },
+        {
+          "indexed": false,
+          "internalType": "uint256",
+          "name": "timestamp",
+          "type": "uint256"
+        }
+      ],
+      "name": "ExpenseRecorded",
+      "type": "event"
+    },
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": true,
+          "internalType": "bytes32",
+          "name": "campaignId",
+          "type": "bytes32"
+        },
+        {
+          "indexed": false,
+          "internalType": "uint8",
+          "name": "milestoneIndex",
+          "type": "uint8"
+        },
+        {
+          "indexed": false,
+          "internalType": "bytes32",
+          "name": "evidenceHash",
+          "type": "bytes32"
+        },
+        {
+          "indexed": true,
+          "internalType": "address",
+          "name": "attestationSigner",
+          "type": "address"
+        },
+        {
+          "indexed": false,
+          "internalType": "string",
+          "name": "status",
+          "type": "string"
+        },
+        {
+          "indexed": false,
+          "internalType": "uint256",
+          "name": "timestamp",
+          "type": "uint256"
+        }
+      ],
+      "name": "MilestoneUpdated",
+      "type": "event"
+    },
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": true,
+          "internalType": "bytes32",
+          "name": "role",
+          "type": "bytes32"
+        },
+        {
+          "indexed": true,
+          "internalType": "bytes32",
+          "name": "previousAdminRole",
+          "type": "bytes32"
+        },
+        {
+          "indexed": true,
+          "internalType": "bytes32",
+          "name": "newAdminRole",
+          "type": "bytes32"
+        }
+      ],
+      "name": "RoleAdminChanged",
+      "type": "event"
+    },
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": true,
+          "internalType": "bytes32",
+          "name": "role",
+          "type": "bytes32"
+        },
+        {
+          "indexed": true,
+          "internalType": "address",
+          "name": "account",
+          "type": "address"
+        },
+        {
+          "indexed": true,
+          "internalType": "address",
+          "name": "sender",
+          "type": "address"
+        }
+      ],
+      "name": "RoleGranted",
+      "type": "event"
+    },
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": true,
+          "internalType": "bytes32",
+          "name": "role",
+          "type": "bytes32"
+        },
+        {
+          "indexed": true,
+          "internalType": "address",
+          "name": "account",
+          "type": "address"
+        },
+        {
+          "indexed": true,
+          "internalType": "address",
+          "name": "sender",
+          "type": "address"
+        }
+      ],
+      "name": "RoleRevoked",
+      "type": "event"
+    },
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": true,
+          "internalType": "bytes32",
+          "name": "ngoId",
+          "type": "bytes32"
+        },
+        {
+          "indexed": false,
+          "internalType": "bytes32",
+          "name": "scoreHash",
+          "type": "bytes32"
+        },
+        {
+          "indexed": false,
+          "internalType": "uint8",
+          "name": "overallScore",
+          "type": "uint8"
+        },
+        {
+          "indexed": false,
+          "internalType": "string",
+          "name": "label",
+          "type": "string"
+        },
+        {
+          "indexed": false,
+          "internalType": "uint256",
+          "name": "timestamp",
+          "type": "uint256"
+        }
+      ],
+      "name": "ScoreSnapshot",
+      "type": "event"
+    },
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": true,
+          "internalType": "bytes32",
+          "name": "credentialId",
+          "type": "bytes32"
+        },
+        {
+          "indexed": true,
+          "internalType": "bytes32",
+          "name": "campaignId",
+          "type": "bytes32"
+        },
+        {
+          "indexed": false,
+          "internalType": "bytes32",
+          "name": "volunteerHash",
+          "type": "bytes32"
+        },
+        {
+          "indexed": false,
+          "internalType": "uint16",
+          "name": "hoursCount",
+          "type": "uint16"
+        },
+        {
+          "indexed": false,
+          "internalType": "uint256",
+          "name": "timestamp",
+          "type": "uint256"
+        }
+      ],
+      "name": "VolunteerCredential",
+      "type": "event"
+    },
+    {
+      "inputs": [],
+      "name": "AUDITOR_ROLE",
+      "outputs": [
+        {
+          "internalType": "bytes32",
+          "name": "",
+          "type": "bytes32"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "name": "DEFAULT_ADMIN_ROLE",
+      "outputs": [
+        {
+          "internalType": "bytes32",
+          "name": "",
+          "type": "bytes32"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "name": "RELAYER_ROLE",
+      "outputs": [
+        {
+          "internalType": "bytes32",
+          "name": "",
+          "type": "bytes32"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "bytes32",
+          "name": "merkleRoot",
+          "type": "bytes32"
+        },
+        {
+          "internalType": "uint256",
+          "name": "dateTimestamp",
+          "type": "uint256"
+        },
+        {
+          "internalType": "uint32",
+          "name": "recordCount",
+          "type": "uint32"
+        }
+      ],
+      "name": "anchorDailyState",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "bytes32",
+          "name": "ngoId",
+          "type": "bytes32"
+        },
+        {
+          "internalType": "string",
+          "name": "docType",
+          "type": "string"
+        },
+        {
+          "internalType": "bytes32",
+          "name": "fileHash",
+          "type": "bytes32"
+        }
+      ],
+      "name": "anchorDocument",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "bytes32",
+          "name": "campaignId",
+          "type": "bytes32"
+        },
+        {
+          "internalType": "bytes32",
+          "name": "ngoId",
+          "type": "bytes32"
+        },
+        {
+          "internalType": "uint256",
+          "name": "targetAmountPaise",
+          "type": "uint256"
+        },
+        {
+          "internalType": "string",
+          "name": "currency",
+          "type": "string"
+        }
+      ],
+      "name": "createCampaign",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "bytes32",
+          "name": "campaignId",
+          "type": "bytes32"
+        },
+        {
+          "internalType": "string",
+          "name": "reasonCode",
+          "type": "string"
+        },
+        {
+          "internalType": "bytes32",
+          "name": "evidenceHash",
+          "type": "bytes32"
+        }
+      ],
+      "name": "flagCampaign",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "bytes32",
+          "name": "role",
+          "type": "bytes32"
+        }
+      ],
+      "name": "getRoleAdmin",
+      "outputs": [
+        {
+          "internalType": "bytes32",
+          "name": "",
+          "type": "bytes32"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "bytes32",
+          "name": "role",
+          "type": "bytes32"
+        },
+        {
+          "internalType": "address",
+          "name": "account",
+          "type": "address"
+        }
+      ],
+      "name": "grantRole",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "bytes32",
+          "name": "role",
+          "type": "bytes32"
+        },
+        {
+          "internalType": "address",
+          "name": "account",
+          "type": "address"
+        }
+      ],
+      "name": "hasRole",
+      "outputs": [
+        {
+          "internalType": "bool",
+          "name": "",
+          "type": "bool"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "bytes32",
+          "name": "credentialId",
+          "type": "bytes32"
+        },
+        {
+          "internalType": "bytes32",
+          "name": "campaignId",
+          "type": "bytes32"
+        },
+        {
+          "internalType": "bytes32",
+          "name": "volunteerHash",
+          "type": "bytes32"
+        },
+        {
+          "internalType": "uint16",
+          "name": "hoursCount",
+          "type": "uint16"
+        }
+      ],
+      "name": "issueVolunteerCredential",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "bytes32",
+          "name": "campaignId",
+          "type": "bytes32"
+        },
+        {
+          "internalType": "bytes32",
+          "name": "budgetItemsHash",
+          "type": "bytes32"
+        },
+        {
+          "internalType": "uint256",
+          "name": "targetAmountPaise",
+          "type": "uint256"
+        }
+      ],
+      "name": "lockCampaignBudget",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "bytes32",
+          "name": "donationId",
+          "type": "bytes32"
+        },
+        {
+          "internalType": "bytes32",
+          "name": "campaignId",
+          "type": "bytes32"
+        },
+        {
+          "internalType": "bytes32",
+          "name": "gatewayReceiptHash",
+          "type": "bytes32"
+        },
+        {
+          "internalType": "uint256",
+          "name": "amountPaise",
+          "type": "uint256"
+        },
+        {
+          "internalType": "string",
+          "name": "currency",
+          "type": "string"
+        }
+      ],
+      "name": "recordDonation",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "bytes32",
+          "name": "campaignId",
+          "type": "bytes32"
+        },
+        {
+          "internalType": "uint8",
+          "name": "milestoneIndex",
+          "type": "uint8"
+        },
+        {
+          "internalType": "uint256",
+          "name": "amountPaise",
+          "type": "uint256"
+        },
+        {
+          "internalType": "bytes32",
+          "name": "vendorGstHash",
+          "type": "bytes32"
+        },
+        {
+          "internalType": "bytes32",
+          "name": "invoiceHash",
+          "type": "bytes32"
+        }
+      ],
+      "name": "recordExpense",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "bytes32",
+          "name": "donationId",
+          "type": "bytes32"
+        },
+        {
+          "internalType": "bytes32",
+          "name": "campaignId",
+          "type": "bytes32"
+        },
+        {
+          "internalType": "uint256",
+          "name": "amountPaise",
+          "type": "uint256"
+        },
+        {
+          "internalType": "string",
+          "name": "reason",
+          "type": "string"
+        }
+      ],
+      "name": "recordRefund",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "bytes32",
+          "name": "role",
+          "type": "bytes32"
+        }
+      ],
+      "name": "renounceRole",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "bytes32",
+          "name": "role",
+          "type": "bytes32"
+        },
+        {
+          "internalType": "address",
+          "name": "account",
+          "type": "address"
+        }
+      ],
+      "name": "revokeRole",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "bytes32",
+          "name": "ngoId",
+          "type": "bytes32"
+        },
+        {
+          "internalType": "bytes32",
+          "name": "scoreHash",
+          "type": "bytes32"
+        },
+        {
+          "internalType": "uint8",
+          "name": "overallScore",
+          "type": "uint8"
+        },
+        {
+          "internalType": "string",
+          "name": "label",
+          "type": "string"
+        }
+      ],
+      "name": "snapshotScore",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "bytes32",
+          "name": "campaignId",
+          "type": "bytes32"
+        },
+        {
+          "internalType": "uint8",
+          "name": "milestoneIndex",
+          "type": "uint8"
+        },
+        {
+          "internalType": "bytes32",
+          "name": "evidenceHash",
+          "type": "bytes32"
+        },
+        {
+          "internalType": "address",
+          "name": "attestationSigner",
+          "type": "address"
+        },
+        {
+          "internalType": "string",
+          "name": "status",
+          "type": "string"
+        }
+      ],
+      "name": "updateMilestone",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "bytes32",
+          "name": "leafHash",
+          "type": "bytes32"
+        },
+        {
+          "internalType": "bytes32[]",
+          "name": "merkleProof",
+          "type": "bytes32[]"
+        },
+        {
+          "internalType": "bytes32",
+          "name": "expectedRoot",
+          "type": "bytes32"
+        }
+      ],
+      "name": "verifyDatabaseRecord",
+      "outputs": [
+        {
+          "internalType": "bool",
+          "name": "",
+          "type": "bool"
+        }
+      ],
+      "stateMutability": "pure",
+      "type": "function"
+    }
+  ],
+  "bytecode": "0x608060405234801561001057600080fd5b50604051620011bf380380620011bf83398101604081905261003191610134565b60006001600160a01b03821615610048578161004a565b335b90506100576000826100b2565b6100817fe2b7fb3b832174769106daebcfd6d1970523240dda11281102db9363b83b0dc4826100b2565b6100ab7f59a1c48e5837ad7a7f3dcedcbe129bf3249ec4fbf651fd4f5e2600ead39fe2f5826100b2565b5050610164565b6000828152602081815260408083206001600160a01b038516845290915290205460ff16610130576000828152602081815260408083206001600160a01b0385168085529252808320805460ff1916600117905551339285917f2f8788117e7eff1d82e926ec794901d17c78024a50270940304540a733656f0d9190a45b5050565b60006020828403121561014657600080fd5b81516001600160a01b038116811461015d57600080fd5b9392505050565b61104b80620001746000396000f3fe608060405234801561001057600080fd5b506004361061012c5760003560e01c80636e1d616e116100ad578063bde366ee11610071578063bde366ee14610279578063c0fedcb31461028c578063d547741f1461029f578063ddb1e0a6146102b2578063e7572bbc146102c557600080fd5b80636e1d616e146102215780638bb9c5bf1461023657806391d1485414610249578063926d7d7f1461025c578063a217fddf1461027157600080fd5b80632f2ff15d116100f45780632f2ff15d146101b257806334e9ff5f146101c5578063371408a6146101d85780633d792445146101eb57806348285033146101fe57600080fd5b80630157034d1461013157806301843bdd1461014657806309541322146101595780630e7bcb391461016c578063248a9ca31461017f575b600080fd5b61014461013f366004610a5d565b6102d8565b005b610144610154366004610ad2565b61035e565b610144610167366004610b52565b6103d8565b61014461017a366004610bca565b61047c565b61019f61018d366004610c2b565b60009081526001602052604090205490565b6040519081526020015b60405180910390f35b6101446101c0366004610c44565b6104f8565b6101446101d3366004610ad2565b61053c565b6101446101e6366004610c70565b61058a565b6101446101f9366004610cb8565b61060c565b61021161020c366004610d03565b610689565b60405190151581526020016101a9565b61019f600080516020610ff683398151915281565b610144610244366004610c2b565b610737565b610211610257366004610c44565b610744565b61019f600080516020610fd683398151915281565b61019f600081565b610144610287366004610d88565b61076d565b61014461029a366004610bca565b6107f2565b6101446102ad366004610c44565b61085e565b6101446102c0366004610dce565b61089d565b6101446102d3366004610e10565b610911565b600080516020610fd68339815191526102f18133610744565b6103165760405162461bcd60e51b815260040161030d90610e5c565b60405180910390fd5b60408051848152602081018490524281830152905185917fd3151c0164fbd0edcddfafece31ac36b6850be6a721b8dcf07e22cc118f822ac919081900360600190a250505050565b600080516020610fd68339815191526103778133610744565b6103935760405162461bcd60e51b815260040161030d90610e5c565b847f276be4d519a3b3aea2062c9654069015790c7e23afb82d4ee350fa66c621d251858585426040516103c99493929190610ece565b60405180910390a25050505050565b600080516020610ff68339815191526103f18133610744565b61040d5760405162461bcd60e51b815260040161030d90610e5c565b60006001600160a01b038516156104245784610426565b335b9050806001600160a01b0316887f1d8f51ef1a03019ba46868a2bfbe61649fbd4ab36d964cfc2ed33e743625f0e6898988884260405161046a959493929190610ef5565b60405180910390a35050505050505050565b600080516020610fd68339815191526104958133610744565b6104b15760405162461bcd60e51b815260040161030d90610e5c565b84867fcfbeca76aac084955a3dc8d08e21ab2ea67cb8689eee2d89336ebbbfe425145d868686426040516104e89493929190610f2a565b60405180910390a3505050505050565b6000828152600160205260409020546105118133610744565b61052d5760405162461bcd60e51b815260040161030d90610e5c565b6105378383610990565b505050565b336001600160a01b0316847f6847c7a774d190784d78fcf8920ebd8c0334755c0aebe0cb1bc1596b720085208585854260405161057c9493929190610ece565b60405180910390a350505050565b600080516020610ff68339815191526105a38133610744565b6105bf5760405162461bcd60e51b815260040161030d90610e5c565b6040805184815261ffff8416602082015242818301529051859187917fa1d506bca0ab83ec31478b515bcebe9144aa85f804c393fae3d1edda3413f0619181900360600190a35050505050565b600080516020610fd68339815191526106258133610744565b6106415760405162461bcd60e51b815260040161030d90610e5c565b857f8f71d61a692073ae80bb0bee9eb9acf9f4c0650a656360aaa7eea769016a28d08686868642604051610679959493929190610f55565b60405180910390a2505050505050565b600084815b8481101561072b5760008686838181106106aa576106aa610f78565b9050602002013590508083116106eb576040805160208101859052908101829052606001604051602081830303815290604052805190602001209250610718565b60408051602081018390529081018490526060016040516020818303038152906040528051906020012092505b508061072381610f8e565b91505061068e565b50909114949350505050565b61074181336109f8565b50565b6000918252602082815260408084206001600160a01b0393909316845291905290205460ff1690565b600080516020610ff68339815191526107868133610744565b6107a25760405162461bcd60e51b815260040161030d90610e5c565b6040805160ff87168152602081018690529081018490526060810183905242608082015286907f26e4f00062fef4ed747a1050632b20401af0766dc56a463fb0bcd20a7759032f9060a001610679565b600080516020610fd683398151915261080b8133610744565b6108275760405162461bcd60e51b815260040161030d90610e5c565b84867f1ed050a0311f9b0c76fca0fd4faa788bb1d54a691f0da5fe0db30cdef80d6a35868686426040516104e89493929190610f2a565b6000828152600160205260409020546108778133610744565b6108935760405162461bcd60e51b815260040161030d90610e5c565b61053783836109f8565b600080516020610fd68339815191526108b68133610744565b6108d25760405162461bcd60e51b815260040161030d90610e5c565b6040805163ffffffff84168152426020820152849186917fb7c697257d3b8f625c059ffbc8d95df82ecf7394a1f38820c69a73894489a9cc910161057c565b600080516020610fd683398151915261092a8133610744565b6109465760405162461bcd60e51b815260040161030d90610e5c565b85877f92d5b51686b0804f9276fecef11dd28ae2d31e2c50bad580d223340b14fddabe878787874260405161097f959493929190610fb5565b60405180910390a350505050505050565b61099a8282610744565b6109f4576000828152602081815260408083206001600160a01b0385168085529252808320805460ff1916600117905551339285917f2f8788117e7eff1d82e926ec794901d17c78024a50270940304540a733656f0d9190a45b5050565b610a028282610744565b156109f4576000828152602081815260408083206001600160a01b0385168085529252808320805460ff1916905551339285917ff6391f5c32d9c69d2a47ea670b442974b53935d1edc7fd64eb21e047a839171b9190a45050565b600080600060608486031215610a7257600080fd5b505081359360208301359350604090920135919050565b60008083601f840112610a9b57600080fd5b50813567ffffffffffffffff811115610ab357600080fd5b602083019150836020828501011115610acb57600080fd5b9250929050565b60008060008060608587031215610ae857600080fd5b84359350602085013567ffffffffffffffff811115610b0657600080fd5b610b1287828801610a89565b9598909750949560400135949350505050565b803560ff81168114610b3657600080fd5b919050565b80356001600160a01b0381168114610b3657600080fd5b60008060008060008060a08789031215610b6b57600080fd5b86359550610b7b60208801610b25565b945060408701359350610b9060608801610b3b565b9250608087013567ffffffffffffffff811115610bac57600080fd5b610bb889828a01610a89565b979a9699509497509295939492505050565b600080600080600060808688031215610be257600080fd5b853594506020860135935060408601359250606086013567ffffffffffffffff811115610c0e57600080fd5b610c1a88828901610a89565b969995985093965092949392505050565b600060208284031215610c3d57600080fd5b5035919050565b60008060408385031215610c5757600080fd5b82359150610c6760208401610b3b565b90509250929050565b60008060008060808587031215610c8657600080fd5b843593506020850135925060408501359150606085013561ffff81168114610cad57600080fd5b939692955090935050565b600080600080600060808688031215610cd057600080fd5b8535945060208601359350610ce760408701610b25565b9250606086013567ffffffffffffffff811115610c0e57600080fd5b60008060008060608587031215610d1957600080fd5b84359350602085013567ffffffffffffffff80821115610d3857600080fd5b818701915087601f830112610d4c57600080fd5b813581811115610d5b57600080fd5b8860208260051b8501011115610d7057600080fd5b95986020929092019750949560400135945092505050565b600080600080600060a08688031215610da057600080fd5b85359450610db060208701610b25565b94979496505050506040830135926060810135926080909101359150565b600080600060608486031215610de357600080fd5b8335925060208401359150604084013563ffffffff81168114610e0557600080fd5b809150509250925092565b60008060008060008060a08789031215610e2957600080fd5b86359550602087013594506040870135935060608701359250608087013567ffffffffffffffff811115610bac57600080fd5b60208082526029908201527f456c656f7352656769737472793a2063616c6c6572206c61636b7320726571756040820152686972656420726f6c6560b81b606082015260800190565b81835281816020850137506000828201602090810191909152601f909101601f19169091010190565b606081526000610ee2606083018688610ea5565b6020830194909452506040015292915050565b60ff86168152846020820152608060408201526000610f18608083018587610ea5565b90508260608301529695505050505050565b848152606060208201526000610f44606083018587610ea5565b905082604083015295945050505050565b85815260ff85166020820152608060408201526000610f18608083018587610ea5565b634e487b7160e01b600052603260045260246000fd5b600060018201610fae57634e487b7160e01b600052601160045260246000fd5b5060010190565b858152846020820152608060408201526000610f18608083018587610ea556fee2b7fb3b832174769106daebcfd6d1970523240dda11281102db9363b83b0dc459a1c48e5837ad7a7f3dcedcbe129bf3249ec4fbf651fd4f5e2600ead39fe2f5a2646970667358221220fd6ba765414e1a9b7579732d265aeddfd3b73bea98dc69e881f545208c96222d64736f6c63430008140033"
+}

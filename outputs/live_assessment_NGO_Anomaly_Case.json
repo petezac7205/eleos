@@ -1,0 +1,126 @@
+{
+  "ngo_id": "LIVE_AAATP9876K",
+  "ngo_name": "Pragati Rural Development Trust",
+  "assessment_date": "2026-09-16",
+  "assessment_type": "evidence_based_trustability_assessment",
+  "trustability_score": 57.2,
+  "score_interpretation": {
+    "label": "Limited Evidence Coverage",
+    "description": "Available evidence supports a preliminary assessment; key historical financial reports or operational documentation remain incomplete."
+  },
+  "data_confidence": 0.55,
+  "confidence_band": "Moderate",
+  "dimension_scores": {
+    "identity_legal": 80.0,
+    "financial_transparency": 43.9,
+    "operational_evidence": 43.0,
+    "data_completeness": 66.7
+  },
+  "financial_analysis": {
+    "programme_expense_ratio": 0.5,
+    "administrative_expense_ratio": 0.1667,
+    "fundraising_expense_ratio": 0.0,
+    "surplus_margin": 0.0769,
+    "financial_anomaly_score": -0.0026,
+    "financial_anomaly_label": "Outlier",
+    "peer_group_definition": {
+      "sector": "Disaster Relief & Education",
+      "income_scale": "None",
+      "reference_peer_group": "None",
+      "peer_group_size": 0,
+      "peer_fallback_level": "None"
+    }
+  },
+  "evidence_summary": {
+    "registration_found": true,
+    "registration_verified": false,
+    "pan_verified": true,
+    "tax_exemption_status": "Not Found",
+    "fcra_status": "Not Applicable",
+    "financial_reports_available": 1,
+    "recent_financial_report_available": false,
+    "projects_documented": 1,
+    "documents_available": 2
+  },
+  "positive_evidence": [
+    "Valid legal registration record identified under Trust.",
+    "Permanent Account Number (PAN) was verified against statutory records.",
+    "Organization operates domestic programmes only; FCRA registration is not applicable.",
+    "Available disclosure contains 1 financial report(s).",
+    "Core financial disclosures (income, expenditure, assets, liabilities) are complete.",
+    "Public documentation found for 1 project(s).",
+    "Project timelines, start dates, and durations are consistently documented.",
+    "Published impact summaries and verified milestone deliverables are available."
+  ],
+  "negative_evidence": [
+    "A material accounting discrepancy of \u20b91,500,000 (25.0%) was detected in expenditure reconciliation.",
+    "Auditor issued an adverse opinion or disclaimer of opinion (Adverse)."
+  ],
+  "statistical_findings": [
+    "Isolation Forest flagged an unusual financial distribution (e.g. skewed admin ratio or high concentration).",
+    "Programme expense ratio is 50.0% (Peer group median: 78.0%).",
+    "Administrative expense ratio is 16.7% (Peer group median: 10.0%)."
+  ],
+  "missing_evidence": [
+    "Section 12A/12AB tax exemption certificate was not found.",
+    "Section 80G tax benefit certificate is not documented.",
+    "Latest financial statement is from FY2024-25; recency decay applied.",
+    "Documented projects are ongoing or planned; no completed projects on record.",
+    "Section 12A/80G Exemption",
+    "Operational Geography Disclosure"
+  ],
+  "uncertainty": {
+    "assessment_confidence": 0.55,
+    "major_uncertainty_sources": [
+      "Missing 6 expected evidence disclosures.",
+      "Public evidence is self-reported or platform-extracted; requires statutory registry confirmation."
+    ]
+  },
+  "limitations": [
+    "The assessment is based strictly on observable public evidence and does not establish moral character, honesty, or fraud.",
+    "Missing public documentation does not prove absence of charitable activity or operational wrongdoing.",
+    "Statistical anomaly detection flags unusual distributions, not misuse of funds."
+  ],
+  "methodology": {
+    "methodology_version": "member1-v1.0",
+    "model_version": "iforest-v1.0",
+    "dataset_version": "reference-v1.0",
+    "scoring_weights": {
+      "identity_legal": 0.25,
+      "financial_transparency": 0.3,
+      "operational_evidence": 0.25,
+      "data_completeness": 0.2
+    }
+  },
+  "raw_document_hashes": {
+    "NGO_Anomaly_Case.pdf": "0xe5a15559f97504bd331947203f3534ec9fa60b2e5af497190a8a3419a9021588"
+  },
+  "extraction_provider": "gemini",
+  "verification_summary": {
+    "status": "SCRUTINY_REQUIRED",
+    "checks": {
+      "pan_format_valid": true,
+      "accounting_reconciliation": {
+        "pass": false,
+        "variance_inr": 1500000.0
+      },
+      "icai_udin_verified": false,
+      "project_grant_cross_reconciliation": false,
+      "tax_exemptions": {
+        "section_12a_active": false,
+        "section_80g_active": false
+      },
+      "external_registries": {
+        "darpan_verified": true,
+        "darpan_info": {
+          "darpan_id": "KA/2021/0456789",
+          "matched_ngo_name": "Pragati Rural Development Trust",
+          "status": "Verified",
+          "mode": "Statutory_Registry_Reference_Cache",
+          "disclaimer": "Verified against local statutory registry reference cache for validation."
+        },
+        "cbdt_order_verified": false
+      }
+    }
+  }
+}

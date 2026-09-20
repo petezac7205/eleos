@@ -1,0 +1,123 @@
+{
+  "ngo_id": "LIVE_AAACT9012M",
+  "ngo_name": "Teach For Change India",
+  "assessment_date": "2026-09-16",
+  "assessment_type": "evidence_based_trustability_assessment",
+  "trustability_score": 59.1,
+  "score_interpretation": {
+    "label": "Limited Evidence Coverage",
+    "description": "Available evidence supports a preliminary assessment; key historical financial reports or operational documentation remain incomplete."
+  },
+  "data_confidence": 0.58,
+  "confidence_band": "Moderate",
+  "dimension_scores": {
+    "identity_legal": 90.0,
+    "financial_transparency": 61.9,
+    "operational_evidence": 15.0,
+    "data_completeness": 71.4
+  },
+  "financial_analysis": {
+    "programme_expense_ratio": 0.44,
+    "administrative_expense_ratio": 0.48,
+    "fundraising_expense_ratio": 0.05,
+    "surplus_margin": 0.0196,
+    "financial_anomaly_score": -0.0571,
+    "financial_anomaly_label": "Outlier",
+    "peer_group_definition": {
+      "sector": "Disaster Relief & Education",
+      "income_scale": "None",
+      "reference_peer_group": "None",
+      "peer_group_size": 0,
+      "peer_fallback_level": "None"
+    }
+  },
+  "evidence_summary": {
+    "registration_found": true,
+    "registration_verified": false,
+    "pan_verified": true,
+    "tax_exemption_status": "Valid",
+    "fcra_status": "Valid",
+    "financial_reports_available": 1,
+    "recent_financial_report_available": false,
+    "projects_documented": 0,
+    "documents_available": 2
+  },
+  "positive_evidence": [
+    "Valid legal registration record identified under Society.",
+    "Permanent Account Number (PAN) was verified against statutory records.",
+    "Section 12A/12AB charitable tax-exempt registration is active.",
+    "Active Foreign Contribution Regulation Act (FCRA) registration verified.",
+    "Available disclosure contains 1 financial report(s).",
+    "Reported financial totals reconcile mathematically with itemized expense categories.",
+    "Core financial disclosures (income, expenditure, assets, liabilities) are complete."
+  ],
+  "negative_evidence": [
+    "Auditor issued a qualified report noting specific reservations or missing disclosures."
+  ],
+  "statistical_findings": [
+    "Isolation Forest flagged an unusual financial distribution (e.g. skewed admin ratio or high concentration).",
+    "Programme expense ratio is 44.0% (Peer group median: 78.0%).",
+    "Administrative expense ratio is 48.0% (Peer group median: 10.0%)."
+  ],
+  "missing_evidence": [
+    "Section 80G tax benefit certificate is not documented.",
+    "Latest financial statement is from FY2024-25; recency decay applied.",
+    "No publicly documented projects or operational track records were located.",
+    "Public Project Documentation",
+    "Operational Geography Disclosure"
+  ],
+  "uncertainty": {
+    "assessment_confidence": 0.58,
+    "major_uncertainty_sources": [
+      "Missing 5 expected evidence disclosures.",
+      "Public evidence is self-reported or platform-extracted; requires statutory registry confirmation."
+    ]
+  },
+  "limitations": [
+    "The assessment is based strictly on observable public evidence and does not establish moral character, honesty, or fraud.",
+    "Missing public documentation does not prove absence of charitable activity or operational wrongdoing.",
+    "Statistical anomaly detection flags unusual distributions, not misuse of funds."
+  ],
+  "methodology": {
+    "methodology_version": "member1-v1.0",
+    "model_version": "iforest-v1.0",
+    "dataset_version": "reference-v1.0",
+    "scoring_weights": {
+      "identity_legal": 0.25,
+      "financial_transparency": 0.3,
+      "operational_evidence": 0.25,
+      "data_completeness": 0.2
+    }
+  },
+  "raw_document_hashes": {
+    "NGO_HighAdmin.pdf": "0x70510727ce728847d0f12d3f79627928fe68a8fe30058507a17828c99d329b50"
+  },
+  "extraction_provider": "aws_textract_bedrock",
+  "verification_summary": {
+    "status": "PASSED",
+    "checks": {
+      "pan_format_valid": true,
+      "accounting_reconciliation": {
+        "pass": true,
+        "variance_inr": 0.0
+      },
+      "icai_udin_verified": true,
+      "project_grant_cross_reconciliation": true,
+      "tax_exemptions": {
+        "section_12a_active": true,
+        "section_80g_active": false
+      },
+      "external_registries": {
+        "darpan_verified": true,
+        "darpan_info": {
+          "darpan_id": "MH/2020/0345678",
+          "matched_ngo_name": "Teach For Change India",
+          "status": "Verified",
+          "mode": "Statutory_Registry_Reference_Cache",
+          "disclaimer": "Verified against local statutory registry reference cache for validation."
+        },
+        "cbdt_order_verified": true
+      }
+    }
+  }
+}
